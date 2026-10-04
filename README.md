@@ -1,16 +1,76 @@
-# React + Vite
+# Telco Customer Churn — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React frontend for the Telco Customer Churn prediction application.
 
-Currently, two official plugins are available:
+The frontend provides a web interface for making individual and batch churn predictions through the FastAPI backend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Live Application
 
-## React Compiler
+**https://customer-churn-frontend-qtem.onrender.com/**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Backend API:
 
-## Expanding the ESLint configuration
+**https://churn-api-ka1q.onrender.com/docs**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Backend Repository:
+
+https://github.com/princemuchhal1/Customer-churn
+
+## Tech Stack
+
+- React
+- JavaScript
+- Vite
+- CSS
+- Fetch API
+- Docker
+- Render
+
+## Features
+
+### Single Prediction
+
+Users can enter customer information and receive:
+
+- Churn probability
+- Churn prediction
+
+### Batch Prediction
+
+Upload customer data as:
+
+- CSV
+- JSON
+
+The application displays:
+
+- Total customers
+- Predicted churn
+- Predicted no churn
+- Average churn probability
+- Individual prediction results
+
+### Result Download
+
+Batch predictions can be downloaded as a CSV file.
+
+### Prediction History
+
+The frontend can retrieve prediction history stored in PostgreSQL through the backend API.
+
+## Application Flow
+
+```text
+User
+ ↓
+React Form
+ ↓
+FastAPI /predict
+ ↓
+ML Model
+ ↓
+Prediction
+ ↓
+PostgreSQL
+ ↓
+Prediction History
